@@ -28,7 +28,7 @@ function LoginPage() {
       {/* login form */}
       <form
         onSubmit={login}
-        className="bg-white p-6 rounded-xl shadow-md w-80 space-y-5"
+        className="bg-white p-6 rounded-xl shadow-md xs:w-72 md:w-80 space-y-5"
       >
         {/* login form title */}
         <h1 className="text-2xl font-bold text-center my-3">ورود</h1>
