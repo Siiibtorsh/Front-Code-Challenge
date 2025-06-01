@@ -1,11 +1,19 @@
+import React, { Suspense } from 'react';
+import { useRoutes, RouterProvider } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import { UserProvider } from './context/UserContext';
+import Loading from './components/Loading';
+import routes from './routes';
+import './index.css';
+
 function App() {
-    return (<div className={'min-h-screen w-full flex xl:flex-row flex-col justify-center items-center'}>
-        <img className={'w-52 animate-pulse'} src="/sibtorsh-logo.svg" alt=""/>
-        <span className={'font-bold text-xl xl:text-5xl text-green-700'}>
-            Welcome to Sibtorsh code challenge
-        </span>
-        <img className={'w-52 animate-pulse'} src="/sibtorsh-logo.svg" alt=""/>
-    </div>);
+    return (
+        <AuthProvider>
+            <Suspense fallback={<Loading />}>
+                <RouterProvider router={routes} />
+            </Suspense>
+        </AuthProvider>
+    );
 }
 
 export default App;
