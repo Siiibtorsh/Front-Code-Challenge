@@ -1,11 +1,18 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Users from "./pages/Users";
+import Login from "./pages/Login";
+
 function App() {
-    return (<div className={'min-h-screen w-full flex xl:flex-row flex-col justify-center items-center'}>
-        <img className={'w-52 animate-pulse'} src="/sibtorsh-logo.svg" alt=""/>
-        <span className={'font-bold text-xl xl:text-5xl text-green-700'}>
-            Welcome to Sibtorsh code challenge
-        </span>
-        <img className={'w-52 animate-pulse'} src="/sibtorsh-logo.svg" alt=""/>
-    </div>);
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" Component={Home} />
+        <Route path="/auth/login" Component={Login} />
+        <Route path="/dashboard/users" Component={Users} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
